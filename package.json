@@ -4,6 +4,7 @@
   "description": "A test project for Dev Environments exam",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AtanasBosnov/DevEnv/issues"
   },
-  "homepage": "https://github.com/AtanasBosnov/DevEnv#readme"
+  "homepage": "https://github.com/AtanasBosnov/DevEnv#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }

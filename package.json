@@ -1,0 +1,19 @@
+{
+  "name": "devenv",
+  "version": "1.0.0",
+  "description": "A test project for Dev Environments exam",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtanasBosnov/DevEnv.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AtanasBosnov/DevEnv/issues"
+  },
+  "homepage": "https://github.com/AtanasBosnov/DevEnv#readme"
+}

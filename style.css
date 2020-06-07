@@ -23,7 +23,8 @@ body {
 }
 
 header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(imges/tomat.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(imges/tomat.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -256,7 +257,8 @@ h3:after {
 }
 
 .testimonials {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url(imges/m11.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+    url(imges/m11.jpg);
   color: whitesmoke;
   padding-top: 1;
   font-family: monospace;

@@ -54,8 +54,40 @@ gulp.task("css-vendor", function() {
       //place all CSS in this file
       .pipe(gp_concat("vendor.min.css"))
       //add it in this folder
-      .pipe(gulp.dest("./public/dist/vendor/css"))
+      .pipe(gulp.dest("./public/dist/css"))
   );
+});
+
+//JS tasks
+
+gulp.task("js-vendor", function() {
+  return gulp
+    .src([
+      "./public/vendor/jquery/jquery-3.2.1.min.js",
+      "./public/vendor/wow/wow.min.js",
+      "./public/vendor/animsition/dist/js/animsition.min.js",
+      "./public/vendor/bootstrap/js/popper.min.js",
+      "./public/vendor/revolution/js/jquery.themepunch.tools.min.js",
+      "./public/vendor/revolution/js/jquery.themepunch.revolution.min.js",
+      "./public/vendor/bootstrap/js/bootstrap.min.js",
+      "./public/vendor/revolution/js/extensions/revolution.extension.video.min.js",
+      "./public/vendor/revolution/js/extensions/revolution.extension.carousel.min.js",
+      "./public/vendor/revolution/js/extensions/revolution.extension.slideanims.min.js",
+      "./public/vendor/revolution/js/extensions/revolution.extension.actions.min.js",
+      "./public/vendor/revolution/js/extensions/revolution.extension.layeranimation.min.js",
+      "./public/vendor/revolution/js/extensions/revolution.extension.kenburn.min.js",
+      "./public/vendor/revolution/js/extensions/revolution.extension.navigation.min.js",
+      "./public/vendor/revolution/js/extensions/revolution.extension.migration.min.js",
+      "./public/vendor/revolution/js/extensions/revolution.extension.parallax.min.js",
+      "./public/vendor/select2/select2.min.js",
+      "./public/vendor/daterangepicker-bootstrap/moment.min.js",
+      "./public/vendor/daterangepicker-bootstrap/daterangepicker.js"
+    ])
+    .pipe(gp_concat("vendor.min.js"))
+    .pipe(gulp.dest("./public/dist/js/"))
+    .pipe(gp_rename("vendor.min.js"))
+    .pipe(gp_uglify())
+    .pipe(gulp.dest("./public/dist/js/"));
 });
 
 //Adding a task combining all tasks

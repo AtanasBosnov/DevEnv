@@ -60,6 +60,16 @@ gulp.task("css-vendor", function() {
 
 //JS tasks
 
+gulp.task("js-main", function() {
+  return gulp
+    .src(["./public/js/main.js"])
+    .pipe(gp_concat("main.min.js"))
+    .pipe(gulp.dest("./public/dist/js/"))
+    .pipe(gp_rename("main.min.js"))
+    .pipe(gp_uglify())
+    .pipe(gulp.dest("./public/dist/js/"));
+});
+
 gulp.task("js-vendor", function() {
   return gulp
     .src([
@@ -67,9 +77,9 @@ gulp.task("js-vendor", function() {
       "./public/vendor/wow/wow.min.js",
       "./public/vendor/animsition/dist/js/animsition.min.js",
       "./public/vendor/bootstrap/js/popper.min.js",
+      "./public/vendor/bootstrap/js/bootstrap.min.js",
       "./public/vendor/revolution/js/jquery.themepunch.tools.min.js",
       "./public/vendor/revolution/js/jquery.themepunch.revolution.min.js",
-      "./public/vendor/bootstrap/js/bootstrap.min.js",
       "./public/vendor/revolution/js/extensions/revolution.extension.video.min.js",
       "./public/vendor/revolution/js/extensions/revolution.extension.carousel.min.js",
       "./public/vendor/revolution/js/extensions/revolution.extension.slideanims.min.js",
@@ -79,6 +89,7 @@ gulp.task("js-vendor", function() {
       "./public/vendor/revolution/js/extensions/revolution.extension.navigation.min.js",
       "./public/vendor/revolution/js/extensions/revolution.extension.migration.min.js",
       "./public/vendor/revolution/js/extensions/revolution.extension.parallax.min.js",
+      "./public/js/slide-custom.js",
       "./public/vendor/select2/select2.min.js",
       "./public/vendor/daterangepicker-bootstrap/moment.min.js",
       "./public/vendor/daterangepicker-bootstrap/daterangepicker.js"
@@ -90,9 +101,17 @@ gulp.task("js-vendor", function() {
     .pipe(gulp.dest("./public/dist/js/"));
 });
 
-//Adding a task combining all tasks
+//Combined gulp task for JS
+gulp.task("js", gulp.series("js-main", "js-vendor", function() {}));
 
+//Combined gulp task for CSS
 gulp.task(
   "style",
   gulp.series("css-main", "copy-fonts", "css-vendor", function() {})
 );
+
+//Production task
+gulp.task("prod", gulp.series("style", "js", function() {}));
+
+//Default task - all the tasks combined
+gulp.task("default", gulp.series("style", "js", function() {}));

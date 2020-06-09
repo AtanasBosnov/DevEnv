@@ -12,6 +12,7 @@ body {
   font-family: fantasy;
   background-color: white;
 }
+
 .hero {
   position: absolute;
   width: 1140px;
@@ -29,6 +30,7 @@ header {
   background-size: cover;
   /* background-attachment:fixed; */
 }
+
 h1 {
   color: black;
 }
@@ -67,6 +69,7 @@ h1 {
   height: 100;
   float: left;
 }
+
 .btn {
   padding: 10px 5px;
   border-radius: 12px;
@@ -80,6 +83,7 @@ h1 {
   color: orange;
   font-size: 40;
 }
+
 .btn-hungry {
   text-decoration: none;
   position: absolute;
@@ -88,11 +92,13 @@ h1 {
   color: black;
   font-size: 40;
 }
+
 .btn-more:hover {
   background-color: #e67e22;
   color: white;
   transition: all 0.2s ease-in;
 }
+
 .btn-hungry:hover {
   background-color: #e67e22;
   color: white;
@@ -281,3 +287,5 @@ h3:after {
 .gap {
   margin-top: 20px;
 }
+
+/*# sourceMappingURL=style.css.map */

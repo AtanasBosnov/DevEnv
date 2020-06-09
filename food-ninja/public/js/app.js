@@ -1,1 +1,3 @@
-/* Your custom app logic goes here */
+module.exports = function() {
+  return "hello";
+};
